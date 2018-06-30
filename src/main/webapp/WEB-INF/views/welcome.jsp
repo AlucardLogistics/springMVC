@@ -12,5 +12,6 @@
 	</head>
 	<body>
 		<h1> Welcome: ${param.studentName} </h1>
+		<h2> message: ${message} </h2>
 </body>
 </html>

@@ -1,6 +1,9 @@
 package com.alucardLogistics.springMVC.controller;
 
+import javax.servlet.http.HttpServletRequest;
+
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 @Controller
@@ -17,6 +20,27 @@ public class HelloWorldController {
 	@RequestMapping("/processForm")
 	public String processForm() {
 		System.out.println("*****processForm method");
+		return "welcome";
+	}
+	
+	//controller to read form data and add data to the model
+	@RequestMapping("/processFormShout")
+	public String shoutDatName(HttpServletRequest request, Model model) {
+		
+		//read the request parameter from the HTML from
+		String theName = request.getParameter("studentName");
+		
+		//convert to caps
+		theName = theName.toUpperCase();
+		
+		//create message
+		String result = "Yo! " + theName + "!";
+		
+		//add message to the model
+		model.addAttribute("message", result); // name of attr message, and value of attr result
+		
+		System.out.println("*****shoutDatName method");
+		
 		return "welcome";
 	}
 

@@ -7,8 +7,8 @@
 		<title>HelloWorld Form</title>
 	</head>
 		<body>
-			<form action="processForm" method="get">
-				<input type="text" name="studentName"  />
+			<form action="processFormShout" method="get">
+				<input type="text" name="studentName"  />				
 				<input type="submit" />
 			</form>		
 		
