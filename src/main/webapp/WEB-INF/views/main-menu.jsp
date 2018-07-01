@@ -12,6 +12,8 @@
 		<h1> ${greeting} </h1>
 		<p> ${tagline} </p>
 	</div>
-	<a href="showForm">showForm Link</a>
+	<a href="hello/showForm">showForm Link</a>
+	<br /><br />
+	<a href="student/showForm">Register Student Link</a>
 </body>
 </html>
