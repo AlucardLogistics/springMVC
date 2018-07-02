@@ -14,7 +14,7 @@ public class Customer {
 	@Size(min=1, message=" last name is required") //custom error message
 	private String lastName;
 	
-	@NotNull(message="passes are required")
+	@NotNull()
 	@Min(value=0, message="must be greater than or equal to zero")
 	@Max(value=10, message="must be less then or equal to 10")
 	private Integer freePasses;

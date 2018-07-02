@@ -43,6 +43,7 @@ public class CustomerController {
 			BindingResult theBindingResult) { //@Valid will validate the customer object and will bind the result to the BindingResult
 		//the BindingResult parameter must be immediately after the model attribute or it will be ignored
 		System.out.println("*****customer object: " + theCustomer.toString());	
+		System.out.println("*****BindingResult: " + theBindingResult.getAllErrors());
 		if(theBindingResult.hasErrors()) {
 			return "customerForm";
 		} else { 	
