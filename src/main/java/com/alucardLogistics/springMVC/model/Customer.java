@@ -6,6 +6,8 @@ import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Pattern;
 import javax.validation.constraints.Size;
 
+import com.alucardLogistics.springMVC.validation.CourseCode;
+
 public class Customer {
 	
 	private String firstName;
@@ -22,6 +24,9 @@ public class Customer {
 	@NotNull(message="postal is required")
 	@Pattern(regexp="^[a-zA-Z0-9]{5}", message="only 5 chars/digits")
 	private String postalCode;
+	
+	@CourseCode(value= {"ALUCARD", "BATZ"}, message="must start with BATZ or ALUCARD")
+	private String courseCode;
 	
 	public Customer() {
 		
@@ -60,10 +65,21 @@ public class Customer {
 		this.postalCode = postalCode;
 	}
 
+	public String getCourseCode() {
+		return courseCode;
+	}
+
+	public void setCourseCode(String courseCode) {
+		this.courseCode = courseCode;
+	}
+
 	@Override
 	public String toString() {
-		return "Customer [firstName=" + firstName + ", lastName=|" + lastName + "|, postalCode=" + postalCode + "]";
+		return "Customer [firstName=" + firstName + ", lastName=|" + lastName + "|, postalCode=" + postalCode
+				+ ", courseCode=|" + courseCode + "|]";
 	}
+
+	
 
 	
 
